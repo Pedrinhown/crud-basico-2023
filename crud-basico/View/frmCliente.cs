@@ -43,7 +43,7 @@ namespace crud_basico.View
                         cliente.Endereco += $" {txtNumEnd}";
                     }
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -74,8 +74,8 @@ namespace crud_basico.View
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);                
-            }            
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public async Task ConsultarCep(string cep)
@@ -97,21 +97,21 @@ namespace crud_basico.View
                 {
                     throw new Exception("Houve um erro ao tentar carregar um endereço para o CEP informado");
                 }
-            
+
             }
             catch (HttpRequestException ex)
-            {             
+            {
                 MessageBox.Show($"Erro na consulta HTTP: {ex.Message}");
             }
             catch (Exception ex)
-            {                
+            {
                 MessageBox.Show($"Erro: {ex.Message}");
             }
         }
 
         private void PreencherEndereco(Endereco endereco)
         {
-            txtEndereco.Text = endereco.Logradouro;            
+            txtEndereco.Text = endereco.Logradouro;
         }
     }
 }

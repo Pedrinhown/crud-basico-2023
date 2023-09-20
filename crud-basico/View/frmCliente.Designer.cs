@@ -242,7 +242,7 @@
             Controls.Add(txtCep);
             Controls.Add(btnGravarCliente);
             Name = "frmCliente";
-            Text = "frmCliente";
+            Text = "Cliente";
             ResumeLayout(false);
             PerformLayout();
         }
