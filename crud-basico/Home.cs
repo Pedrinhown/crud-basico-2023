@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace crud_basico.View
+namespace crud_basico
 {
-    public partial class Cliente : Form
+    public partial class Home : Form
     {
-        public Cliente()
+        public Home()
         {
             InitializeComponent();
         }

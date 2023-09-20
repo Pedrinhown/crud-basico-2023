@@ -1,0 +1,20 @@
+{
+  "clientes": [
+    {
+      "id": 1,
+      "nome": "Nome",
+      "altura": "1,68",
+      "dtNascimento": "03/07/2001",
+      "idade": "22",
+      "endereco":  "Rua da Rua, 211"
+    },
+    {
+      "id": 2,
+      "nome": "Nome 2",
+      "altura": "1,68",
+      "dtNascimento": "03/07/2001",
+      "idade": "22",
+      "endereco": "Rua da Rua, 212"
+    }
+  ]
+}
