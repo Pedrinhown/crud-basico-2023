@@ -48,6 +48,7 @@
             numEndereco = new Label();
             txtNumEnd = new TextBox();
             btnBuscaEndereco = new Button();
+            btnExcluir = new Button();
             SuspendLayout();
             // 
             // txtCep
@@ -216,11 +217,22 @@
             btnBuscaEndereco.UseVisualStyleBackColor = true;
             btnBuscaEndereco.Click += btnBuscaEndereco_Click;
             // 
+            // btnExcluir
+            // 
+            btnExcluir.Location = new Point(188, 348);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(75, 23);
+            btnExcluir.TabIndex = 22;
+            btnExcluir.Text = "Excluir";
+            btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.Click += btnExcluir_Click;
+            // 
             // frmCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(452, 409);
+            Controls.Add(btnExcluir);
             Controls.Add(btnBuscaEndereco);
             Controls.Add(numEndereco);
             Controls.Add(txtNumEnd);
@@ -269,5 +281,6 @@
         private Label numEndereco;
         private TextBox txtNumEnd;
         private Button btnBuscaEndereco;
+        private Button btnExcluir;
     }
 }

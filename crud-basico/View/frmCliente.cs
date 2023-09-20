@@ -32,6 +32,12 @@ namespace crud_basico.View
 
         }
 
+        private async void btnExcluir_Click(object sender, EventArgs e)
+        {
+            await this.ExcluirCliente();
+        }
+
+
         public Cliente ValidarClienteGravar(Cliente cliente)
         {
             try
@@ -101,7 +107,7 @@ namespace crud_basico.View
             }
             catch (HttpRequestException ex)
             {
-                MessageBox.Show($"Erro na consulta HTTP: {ex.Message}");
+                MessageBox.Show($"Erro na consulta HTTPS: {ex.Message}");
             }
             catch (Exception ex)
             {
@@ -112,6 +118,23 @@ namespace crud_basico.View
         private void PreencherEndereco(Endereco endereco)
         {
             txtEndereco.Text = endereco.Logradouro;
+        }
+
+        private async Task ExcluirCliente()
+        {
+            try
+            {
+                if (txtId.Text == string.Empty)
+                {
+                    throw new Exception("É necessário estar com um cliente selecionado para efetuar a exclusão!");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }
