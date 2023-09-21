@@ -20,6 +20,20 @@ namespace crud_basico.View
         {
             InitializeComponent();
         }
+        public frmCliente(Cliente cliente)
+        {
+            InitializeComponent();
+
+            txtId.Text = cliente.Id.ToString();
+            txtNome.Text = cliente.Nome;
+            txtCpf.Text = cliente.CPF;
+            txtDtNascimento.Text = cliente.DataNascimento.ToString();
+            txtAltura.Text = cliente.Altura.ToString();
+            txtIdadePessoa.Text = (DateTime.Now - cliente.DataNascimento).ToString();
+
+            txtEndereco.Text = cliente.Endereco;
+            txtNumEnd.Text = cliente.numEnd.ToString();
+        }
 
         private async void btnGravarCliente_Click(object sender, EventArgs e)
         {
@@ -127,6 +141,20 @@ namespace crud_basico.View
                 if (txtId.Text == string.Empty)
                 {
                     throw new Exception("É necessário estar com um cliente selecionado para efetuar a exclusão!");
+                }
+
+                using (HttpClient client = new HttpClient())
+                {
+                    HttpResponseMessage response = await client.DeleteAsync($"http://localhost:3000/clientes/{txtId.Text}");
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        Console.WriteLine($"Cliente {txtNome.Text} foi excluído com sucesso.");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Falha ao excluir o cliente {txtNome.Text}. Status Code: {response.StatusCode}");
+                    }
                 }
 
             }

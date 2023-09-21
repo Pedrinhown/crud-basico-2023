@@ -80,6 +80,7 @@
             dgvClientes.RowTemplate.Height = 25;
             dgvClientes.Size = new Size(560, 150);
             dgvClientes.TabIndex = 12;
+            dgvClientes.CellDoubleClick += dgvClientes_CellDoubleClick;
             // 
             // frmPesquisaCliente
             // 

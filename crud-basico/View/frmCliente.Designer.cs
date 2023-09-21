@@ -42,7 +42,7 @@
             txtAltura = new TextBox();
             lblAltura = new Label();
             txtIdadePessoa = new TextBox();
-            txtIdade = new Label();
+            lblIDade = new Label();
             lblEndereco = new Label();
             txtEndereco = new TextBox();
             numEndereco = new Label();
@@ -165,14 +165,14 @@
             txtIdadePessoa.Size = new Size(175, 23);
             txtIdadePessoa.TabIndex = 16;
             // 
-            // txtIdade
+            // lblIDade
             // 
-            txtIdade.AutoSize = true;
-            txtIdade.Location = new Point(68, 221);
-            txtIdade.Name = "txtIdade";
-            txtIdade.Size = new Size(36, 15);
-            txtIdade.TabIndex = 15;
-            txtIdade.Text = "Idade";
+            lblIDade.AutoSize = true;
+            lblIDade.Location = new Point(68, 221);
+            lblIDade.Name = "lblIDade";
+            lblIDade.Size = new Size(36, 15);
+            lblIDade.TabIndex = 15;
+            lblIDade.Text = "Idade";
             // 
             // lblEndereco
             // 
@@ -239,7 +239,7 @@
             Controls.Add(lblEndereco);
             Controls.Add(txtEndereco);
             Controls.Add(txtIdadePessoa);
-            Controls.Add(txtIdade);
+            Controls.Add(lblIDade);
             Controls.Add(txtAltura);
             Controls.Add(lblAltura);
             Controls.Add(txtDtNascimento);
@@ -282,5 +282,6 @@
         private TextBox txtNumEnd;
         private Button btnBuscaEndereco;
         private Button btnExcluir;
+        private Label lblIDade;
     }
 }

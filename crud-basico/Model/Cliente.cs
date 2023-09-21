@@ -35,13 +35,16 @@ namespace crud_basico.Model
         public string? CPF { get; set; }
 
         [JsonPropertyName("dtNascimento")]
-        public DateTime DataNascimento { get; set; }
+        public DateTime? DataNascimento { get; set; }
 
         [JsonPropertyName("altura")]
         public decimal Altura { get; set; }
 
         [JsonPropertyName("endereco")]
         public string? Endereco { get; set; }
+
+        [JsonPropertyName("numEnd")]
+        public int numEnd { get; set; }
 
         //obrigatório, porém deve ser gerado atraves do calculo: (data atual - data de nascimento) = idade
         [JsonPropertyName("idade")]

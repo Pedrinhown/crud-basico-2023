@@ -3,10 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Net.Http;
 using System.Runtime.ConstrainedExecution;
+using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -59,6 +61,28 @@ namespace crud_basico.View
 
             frmCliente.Show();
 
+        }
+
+        private void dgvClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Certifique-se de que uma célula válida foi clicada
+            {
+                DataGridViewRow selectedRow = dgvClientes.Rows[e.RowIndex];
+                Cliente clienteSelecionado = new Cliente
+                {
+                    Id = Convert.ToInt32(selectedRow.Cells[0].Value),
+                    Nome = selectedRow.Cells[1].Value.ToString(),
+                    CPF = selectedRow.Cells[2].Value?.ToString(),
+                    DataNascimento =
+                    selectedRow.Cells[3].Value != null ? (DateTime)selectedRow.Cells[3].Value : null,
+                    Altura = (decimal)selectedRow.Cells[4].Value,
+                    Endereco = selectedRow.Cells[5].Value.ToString(),
+                    idade = (int)selectedRow.Cells[6].Value,
+                };
+
+                frmCliente formCadastro = new frmCliente(clienteSelecionado);
+                formCadastro.ShowDialog();
+            }
         }
     }
 }
