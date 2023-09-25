@@ -2,15 +2,6 @@
   "clientes": [
     {
       "id": 1,
-      "nome": "Nome",
-      "altura": 1.68,
-      "dtNascimento": "2001-07-03",
-      "idade": 22,
-      "endereco": "Rua da Rua, 211",
-      "numEnd": 416
-    },
-    {
-      "id": 2,
       "nome": "Nome 2",
       "altura": 1.68,
       "dtNascimento": "2001-07-03",
@@ -19,14 +10,13 @@
       "numEnd": 416
     },
     {
-      "id": 3,
-      "nome": null,
-      "cpf": null,
-      "dtNascimento": "0001-01-01T00:00:00",
-      "altura": 0,
-      "endereco": null,
-      "numEnd":  416,
-      "idade": 0
+      "id": 2,
+      "nome": "Nome 3",
+      "altura": 1.69,
+      "dtNascimento": "2001-07-03",
+      "idade": 23,
+      "endereco": "Rua da Rua, 213",
+      "numEnd": 417
     }
   ]
 }

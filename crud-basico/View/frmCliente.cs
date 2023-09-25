@@ -149,11 +149,12 @@ namespace crud_basico.View
 
                     if (response.IsSuccessStatusCode)
                     {
-                        Console.WriteLine($"Cliente {txtNome.Text} foi excluído com sucesso.");
+                        MessageBox.Show($"Cliente {txtNome.Text} foi excluído com sucesso.");
+                        this.Close();
                     }
                     else
                     {
-                        Console.WriteLine($"Falha ao excluir o cliente {txtNome.Text}. Status Code: {response.StatusCode}");
+                       throw new Exception($"Falha ao excluir o cliente {txtNome.Text}. Status Code: {response.StatusCode}");
                     }
                 }
 
