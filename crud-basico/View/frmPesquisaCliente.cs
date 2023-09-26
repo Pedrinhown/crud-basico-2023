@@ -70,13 +70,13 @@ namespace crud_basico.View
                 DataGridViewRow selectedRow = dgvClientes.Rows[e.RowIndex];
                 Cliente clienteSelecionado = new Cliente
                 {
-                    Id = Convert.ToInt32(selectedRow.Cells[0].Value),
-                    Nome = selectedRow.Cells[1].Value.ToString(),
+                    id = Convert.ToInt32(selectedRow.Cells[0].Value),
+                    nome = selectedRow.Cells[1].Value.ToString(),
                     CPF = selectedRow.Cells[2].Value?.ToString(),
-                    DataNascimento =
+                    dataNascimento =
                     selectedRow.Cells[3].Value != null ? (DateTime)selectedRow.Cells[3].Value : null,
-                    Altura = (decimal)selectedRow.Cells[4].Value,
-                    Endereco = selectedRow.Cells[5].Value.ToString(),
+                    altura = (decimal)selectedRow.Cells[4].Value,
+                    endereco = selectedRow.Cells[5].Value.ToString(),
                     idade = (int)selectedRow.Cells[6].Value,
                 };
 

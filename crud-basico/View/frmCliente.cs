@@ -24,14 +24,14 @@ namespace crud_basico.View
         {
             InitializeComponent();
 
-            txtId.Text = cliente.Id.ToString();
-            txtNome.Text = cliente.Nome;
+            txtId.Text = cliente.id.ToString();
+            txtNome.Text = cliente.nome;
             txtCpf.Text = cliente.CPF;
-            txtDtNascimento.Text = cliente.DataNascimento.ToString();
-            txtAltura.Text = cliente.Altura.ToString();
-            txtIdadePessoa.Text = (DateTime.Now - cliente.DataNascimento).ToString();
+            txtDtNascimento.Text = cliente.dataNascimento.ToString();
+            txtAltura.Text = cliente.altura.ToString();
+            txtIdadePessoa.Text = (DateTime.Now - cliente.dataNascimento).ToString();
 
-            txtEndereco.Text = cliente.Endereco;
+            txtEndereco.Text = cliente.endereco;
             txtNumEnd.Text = cliente.numEnd.ToString();
         }
 
@@ -56,14 +56,35 @@ namespace crud_basico.View
         {
             try
             {
-                if (cliente.Endereco != null)
+                if (string.IsNullOrEmpty(cliente.nome))
+                    throw new Exception("Informe o nome do cliente!");
+                       
+                if(string.IsNullOrEmpty(cliente.CPF))
+                    throw new Exception("Informe o cpf do cliente!");
+
+                if(!cliente.dataNascimento.HasValue)
+                    throw new Exception("Informe a data de nascimento do cliente!");
+
+                if(cliente.altura <= 0)
+                    throw new Exception("Informe a altura do cliente!");
+
+                if(string.IsNullOrEmpty(cliente.endereco))
+                    throw new Exception("Informe o endereço do cliente!");
+                
+                if(cliente.numEnd <= 0)
+                    throw new Exception("Informe o número para o endereço do cliente!");
+
+                if (cliente.endereco != null)
                 {
                     if (txtNumEnd.Text != null)
                     {
-                        cliente.Endereco += $" {txtNumEnd}";
+                        cliente.endereco += $" {txtNumEnd}";
+                    }
+                    else
+                    {
+                        throw new Exception("Informe o número do endereço do cliente!");
                     }
                 }
-
             }
             catch (Exception ex)
             {
@@ -76,7 +97,9 @@ namespace crud_basico.View
         {
             try
             {
-                Cliente cliente = new Cliente();
+                decimal.TryParse(txtAltura.Text, out decimal altura);
+                int.TryParse(txtId.Text, out int id);
+                Cliente cliente = new Cliente(id, txtNome.Text, txtCpf.Text, Convert.ToDateTime(txtDtNascimento.Text), altura, $"{txtEndereco.Text}, {txtNumEnd.Text}" );
                 this.ValidarClienteGravar(cliente);
 
                 using var httpClient = new HttpClient();
@@ -85,7 +108,7 @@ namespace crud_basico.View
 
                 if (response.IsSuccessStatusCode)
                 {
-                    MessageBox.Show($"Cliente {cliente.Nome} cadastrado com sucesso!");
+                    MessageBox.Show($"Cliente {cliente.nome} cadastrado/atualizado com sucesso!");
                 }
                 else
                 {

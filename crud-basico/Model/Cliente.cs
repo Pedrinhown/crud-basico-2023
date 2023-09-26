@@ -15,37 +15,38 @@ namespace crud_basico.Model
                 
         }
         // Construtor que preenche as propriedades com base nos parâmetros
-        public Cliente(int id, string nome, string cpf, DateTime dataNascimento, decimal altura, string endereco)
+        public Cliente(int idParametro, string nomeParametro, string cpfParametro, DateTime dataNascimentoParametro, decimal alturaParametro, string enderecoParametro)
         {
-            Id = id;
-            Nome = nome;
-            CPF = cpf;
-            DataNascimento = dataNascimento;
-            Altura = altura;
-            Endereco = endereco;
+            id = idParametro;
+            nome = nomeParametro;
+            CPF = cpfParametro;
+            dataNascimento = dataNascimentoParametro;
+            altura = alturaParametro;
+            endereco = enderecoParametro;
         }
 
         [JsonPropertyName("id")]
-        public int Id { get; set; }
+        public int id { get; set; }
 
         [JsonPropertyName("nome")]
-        public string? Nome { get; set; }
+        public string? nome { get; set; }
 
         [JsonPropertyName("cpf")]
         public string? CPF { get; set; }
 
         [JsonPropertyName("dtNascimento")]
-        public DateTime? DataNascimento { get; set; }
+        public DateTime? dataNascimento { get; set; }
 
         [JsonPropertyName("altura")]
-        public decimal Altura { get; set; }
+        public decimal altura { get; set; }
 
         [JsonPropertyName("endereco")]
-        public string? Endereco { get; set; }
+        public string? endereco { get; set; }
 
         [JsonPropertyName("numEnd")]
         public int numEnd { get; set; }
 
+        //MISSÃO: Fazer o cálculo
         //obrigatório, porém deve ser gerado atraves do calculo: (data atual - data de nascimento) = idade
         [JsonPropertyName("idade")]
         public int idade { get; set; }
