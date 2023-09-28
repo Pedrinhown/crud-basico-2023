@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
+﻿using System.Text.Json.Serialization;
 
 namespace crud_basico.Model
 {
@@ -40,9 +35,12 @@ namespace crud_basico.Model
         [JsonPropertyName("altura")]
         public decimal altura { get; set; }
 
+        //o endereço é montado a parte
         [JsonPropertyName("endereco")]
         public string? endereco { get; set; }
 
+        //o endereço é montado a parte com o logradouro, porém no final na hora de gravar
+        //é feito a união entre o endereço e o número em uma unica propriedade no dado do JSON
         [JsonPropertyName("numEnd")]
         public int numEnd { get; set; }
 

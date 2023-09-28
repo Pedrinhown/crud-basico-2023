@@ -27,9 +27,9 @@ namespace crud_basico.View
             txtId.Text = cliente.id.ToString();
             txtNome.Text = cliente.nome;
             txtCpf.Text = cliente.CPF;
-            txtDtNascimento.Text = cliente.dataNascimento.ToString();
+            txtDtNascimento.Text = cliente.dataNascimento.Value.ToShortDateString();
             txtAltura.Text = cliente.altura.ToString();
-            txtIdadePessoa.Text = (DateTime.Now - cliente.dataNascimento).ToString();
+            txtIdadePessoa.Text = (DateTime.Now.Year - cliente.dataNascimento.Value.Year).ToString();
 
             txtEndereco.Text = cliente.endereco;
             txtNumEnd.Text = cliente.numEnd.ToString();
@@ -62,8 +62,10 @@ namespace crud_basico.View
                 if(string.IsNullOrEmpty(cliente.CPF))
                     throw new Exception("Informe o cpf do cliente!");
 
-                if(!cliente.dataNascimento.HasValue)
+                if (!cliente.dataNascimento.HasValue)
                     throw new Exception("Informe a data de nascimento do cliente!");
+                else
+                    cliente.idade = DateTime.Now.Year - cliente.dataNascimento.Value.Year;
 
                 if(cliente.altura <= 0)
                     throw new Exception("Informe a altura do cliente!");
