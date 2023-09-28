@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
+﻿
 namespace crud_basico.View
 {
     public partial class frmProduto : Form
@@ -15,6 +6,41 @@ namespace crud_basico.View
         public frmProduto()
         {
             InitializeComponent();
+        }
+
+        private async void btnExcluir_Click(object sender, EventArgs e)
+        {
+            await this.ExcluirProduto();
+        }
+
+        private async void btnGravarCliente_Click(object sender, EventArgs e)
+        {
+            await this.GravarProduto();
+        }
+
+
+        public async Task GravarProduto()
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public async Task ExcluirProduto()
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
