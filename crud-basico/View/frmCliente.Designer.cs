@@ -162,6 +162,7 @@
             // 
             txtIdadePessoa.Location = new Point(188, 213);
             txtIdadePessoa.Name = "txtIdadePessoa";
+            txtIdadePessoa.ReadOnly = true;
             txtIdadePessoa.Size = new Size(175, 23);
             txtIdadePessoa.TabIndex = 16;
             // 

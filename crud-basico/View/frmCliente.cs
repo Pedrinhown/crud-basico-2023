@@ -58,8 +58,8 @@ namespace crud_basico.View
             {
                 if (string.IsNullOrEmpty(cliente.nome))
                     throw new Exception("Informe o nome do cliente!");
-                       
-                if(string.IsNullOrEmpty(cliente.CPF))
+
+                if (string.IsNullOrEmpty(cliente.CPF))
                     throw new Exception("Informe o cpf do cliente!");
 
                 if (!cliente.dataNascimento.HasValue)
@@ -67,13 +67,13 @@ namespace crud_basico.View
                 else
                     cliente.idade = DateTime.Now.Year - cliente.dataNascimento.Value.Year;
 
-                if(cliente.altura <= 0)
+                if (cliente.altura <= 0)
                     throw new Exception("Informe a altura do cliente!");
 
-                if(string.IsNullOrEmpty(cliente.endereco))
+                if (string.IsNullOrEmpty(cliente.endereco))
                     throw new Exception("Informe o endereço do cliente!");
-                
-                if(cliente.numEnd <= 0)
+
+                if (cliente.numEnd <= 0)
                     throw new Exception("Informe o número para o endereço do cliente!");
 
                 if (cliente.endereco != null)
@@ -101,7 +101,7 @@ namespace crud_basico.View
             {
                 decimal.TryParse(txtAltura.Text, out decimal altura);
                 int.TryParse(txtId.Text, out int id);
-                Cliente cliente = new Cliente(id, txtNome.Text, txtCpf.Text, Convert.ToDateTime(txtDtNascimento.Text), altura, $"{txtEndereco.Text}, {txtNumEnd.Text}" );
+                Cliente cliente = new Cliente(id, txtNome.Text, txtCpf.Text, Convert.ToDateTime(txtDtNascimento.Text), altura, $"{txtEndereco.Text}, {txtNumEnd.Text}");
                 this.ValidarClienteGravar(cliente);
 
                 using var httpClient = new HttpClient();
@@ -179,7 +179,7 @@ namespace crud_basico.View
                     }
                     else
                     {
-                       throw new Exception($"Falha ao excluir o cliente {txtNome.Text}. Status Code: {response.StatusCode}");
+                        throw new Exception($"Falha ao excluir o cliente {txtNome.Text}. Status Code: {response.StatusCode}");
                     }
                 }
 
