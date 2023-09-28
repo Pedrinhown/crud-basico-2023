@@ -33,7 +33,13 @@ namespace crud_basico.View
             using var httpClient = new HttpClient();
             try
             {
-                var apiUrl = $"http://localhost:3000/clientes";
+                string apiUrl = string.Empty;
+
+                if (string.IsNullOrEmpty(txtNome.Text))
+                    apiUrl = $"http://localhost:3000/clientes";
+                else
+                    apiUrl = $"http://localhost:3000/clientes?nome={txtNome.Text}";
+
                 var response = await httpClient.GetAsync(apiUrl);
                 response.EnsureSuccessStatusCode();
                 var jsonContent = await response.Content.ReadAsStringAsync();

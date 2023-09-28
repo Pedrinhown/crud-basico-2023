@@ -17,6 +17,15 @@
       "idade": 23,
       "endereco": "Rua da Rua, 213",
       "numEnd": 417
+    },
+    {
+      "id": 3,
+      "nome": "Predo",
+      "altura": 1.68,
+      "dtNascimento": "2001-07-03",
+      "idade": 22,
+      "endereco": "Rua Rio Guaiba, 416",
+      "numEnd": 416
     }
   ]
 }
