@@ -10,7 +10,7 @@ namespace crud_basico.Model
                 
         }
         // Construtor que preenche as propriedades com base nos parâmetros
-        public Cliente(int idParametro, string nomeParametro, string cpfParametro, DateTime dataNascimentoParametro, decimal alturaParametro, string enderecoParametro)
+        public Cliente(int idParametro, string nomeParametro, string cpfParametro, DateTime dataNascimentoParametro, decimal alturaParametro, string enderecoParametro, int numEndParametro)
         {
             id = idParametro;
             nome = nomeParametro;
@@ -18,6 +18,7 @@ namespace crud_basico.Model
             dataNascimento = dataNascimentoParametro;
             altura = alturaParametro;
             endereco = enderecoParametro;
+            numEnd = numEndParametro;
         }
 
         [JsonPropertyName("id")]

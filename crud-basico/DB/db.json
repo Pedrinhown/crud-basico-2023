@@ -3,6 +3,7 @@
     {
       "id": 1,
       "nome": "Nome 2",
+      "cpf": "00000000000",
       "altura": 1.68,
       "dtNascimento": "2001-07-03",
       "idade": 22,
@@ -12,6 +13,7 @@
     {
       "id": 2,
       "nome": "Nome 3",
+      "cpf": "00000000000",
       "altura": 1.69,
       "dtNascimento": "2001-07-03",
       "idade": 23,
@@ -21,6 +23,7 @@
     {
       "id": 3,
       "nome": "Predo",
+      "cpf": "00000000000",
       "altura": 1.68,
       "dtNascimento": "2001-07-03",
       "idade": 22,

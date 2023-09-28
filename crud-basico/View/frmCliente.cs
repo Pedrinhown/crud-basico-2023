@@ -80,7 +80,7 @@ namespace crud_basico.View
                 {
                     if (txtNumEnd.Text != null)
                     {
-                        cliente.endereco += $" {txtNumEnd}";
+                        cliente.endereco += $" {txtNumEnd.Text}";
                     }
                     else
                     {
@@ -90,7 +90,7 @@ namespace crud_basico.View
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                throw ex;
             }
             return cliente;
         }
@@ -101,7 +101,8 @@ namespace crud_basico.View
             {
                 decimal.TryParse(txtAltura.Text, out decimal altura);
                 int.TryParse(txtId.Text, out int id);
-                Cliente cliente = new Cliente(id, txtNome.Text, txtCpf.Text, Convert.ToDateTime(txtDtNascimento.Text), altura, $"{txtEndereco.Text}, {txtNumEnd.Text}");
+                int.TryParse(txtNumEnd.Text, out int numEnd);
+                Cliente cliente = new Cliente(id, txtNome.Text, txtCpf.Text, Convert.ToDateTime(txtDtNascimento.Text), altura, $"{txtEndereco.Text}, {txtNumEnd.Text}", numEnd);
                 this.ValidarClienteGravar(cliente);
 
                 using var httpClient = new HttpClient();
