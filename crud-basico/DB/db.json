@@ -30,5 +30,19 @@
       "endereco": "Rua Rio Guaiba, 416",
       "numEnd": 416
     }
+  ],
+  "produtos": [
+    {
+      "id": 1,
+      "descricao": "Porduto",
+      "valor": 12.92,
+      "dataCadastro": "2001-07-03"
+    },
+    {
+      "id": 2,
+      "descricao": "Porduto 2",
+      "valor": 5.60,
+      "dataCadastro": "2001-07-03"
+    }
   ]
 }

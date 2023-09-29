@@ -1,4 +1,5 @@
-﻿using System;
+﻿using crud_basico.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,18 @@ namespace crud_basico
         public Home()
         {
             InitializeComponent();
+        }
+
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            frmPesquisaCliente frmCli = new frmPesquisaCliente();
+            frmCli.Show();
+        }
+
+        private void btnProduto_Click(object sender, EventArgs e)
+        {
+            frmPesquisaProduto frmProd = new frmPesquisaProduto();
+            frmProd.Show();
         }
     }
 }

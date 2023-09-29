@@ -28,12 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Home";
+            btnCliente = new Button();
+            btnProduto = new Button();
+            SuspendLayout();
+            // 
+            // btnCliente
+            // 
+            btnCliente.Location = new Point(134, 36);
+            btnCliente.Name = "btnCliente";
+            btnCliente.Size = new Size(75, 23);
+            btnCliente.TabIndex = 0;
+            btnCliente.Text = "Cliente";
+            btnCliente.UseVisualStyleBackColor = true;
+            btnCliente.Click += btnCliente_Click;
+            // 
+            // btnProduto
+            // 
+            btnProduto.Location = new Point(134, 80);
+            btnProduto.Name = "btnProduto";
+            btnProduto.Size = new Size(75, 23);
+            btnProduto.TabIndex = 1;
+            btnProduto.Text = "Produto";
+            btnProduto.UseVisualStyleBackColor = true;
+            btnProduto.Click += btnProduto_Click;
+            // 
+            // Home
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(346, 133);
+            Controls.Add(btnProduto);
+            Controls.Add(btnCliente);
+            Name = "Home";
+            Text = "Home";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button btnCliente;
+        private Button btnProduto;
     }
 }
