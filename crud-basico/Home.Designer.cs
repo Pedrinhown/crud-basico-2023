@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             btnCliente = new Button();
-            btnProduto = new Button();
             SuspendLayout();
             // 
             // btnCliente
@@ -42,22 +41,11 @@
             btnCliente.UseVisualStyleBackColor = true;
             btnCliente.Click += btnCliente_Click;
             // 
-            // btnProduto
-            // 
-            btnProduto.Location = new Point(134, 80);
-            btnProduto.Name = "btnProduto";
-            btnProduto.Size = new Size(75, 23);
-            btnProduto.TabIndex = 1;
-            btnProduto.Text = "Produto";
-            btnProduto.UseVisualStyleBackColor = true;
-            btnProduto.Click += btnProduto_Click;
-            // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(346, 133);
-            Controls.Add(btnProduto);
             Controls.Add(btnCliente);
             Name = "Home";
             Text = "Home";
@@ -67,6 +55,5 @@
         #endregion
 
         private Button btnCliente;
-        private Button btnProduto;
     }
 }
