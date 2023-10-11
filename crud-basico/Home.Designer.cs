@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             btnCliente = new Button();
+            btnAcaoDoBotao = new Button();
+            txtTexto = new TextBox();
+            lblTexto = new Label();
             SuspendLayout();
             // 
             // btnCliente
@@ -41,20 +44,52 @@
             btnCliente.UseVisualStyleBackColor = true;
             btnCliente.Click += btnCliente_Click;
             // 
+            // btnAcaoDoBotao
+            // 
+            btnAcaoDoBotao.Location = new Point(134, 77);
+            btnAcaoDoBotao.Name = "btnAcaoDoBotao";
+            btnAcaoDoBotao.Size = new Size(75, 23);
+            btnAcaoDoBotao.TabIndex = 1;
+            btnAcaoDoBotao.Text = "Texto";
+            btnAcaoDoBotao.UseVisualStyleBackColor = true;
+            // 
+            // txtTexto
+            // 
+            txtTexto.Location = new Point(122, 106);
+            txtTexto.Name = "txtTexto";
+            txtTexto.Size = new Size(100, 23);
+            txtTexto.TabIndex = 2;
+            // 
+            // lblTexto
+            // 
+            lblTexto.AutoSize = true;
+            lblTexto.Location = new Point(81, 109);
+            lblTexto.Name = "lblTexto";
+            lblTexto.Size = new Size(35, 15);
+            lblTexto.TabIndex = 3;
+            lblTexto.Text = "Texto";
+            // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(346, 133);
+            Controls.Add(lblTexto);
+            Controls.Add(txtTexto);
+            Controls.Add(btnAcaoDoBotao);
             Controls.Add(btnCliente);
             Name = "Home";
             Text = "Home";
             Load += Home_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Button btnCliente;
+        private Button btnAcaoDoBotao;
+        private TextBox txtTexto;
+        private Label lblTexto;
     }
 }

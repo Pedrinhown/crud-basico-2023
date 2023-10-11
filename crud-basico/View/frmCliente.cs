@@ -51,7 +51,7 @@ namespace crud_basico.View
                     throw new Exception("Informe o nome do cliente!");
 
                 if (string.IsNullOrEmpty(cliente.CPF))
-                    throw new Exception("Informe o cpf do cliente!");
+                    throw new Exception("Informe o cpf do cliente por favor!");
 
                 if (!cliente.dataNascimento.HasValue)
                     throw new Exception("Informe a data de nascimento do cliente!");
@@ -90,6 +90,8 @@ namespace crud_basico.View
         {
             try
             {
+                //F5 avança ou finaliza a instrução/ até proximo break
+                //F10 - avança para a proxima linha
                 decimal.TryParse(txtAltura.Text, out decimal altura);
                 int.TryParse(txtId.Text, out int id);
                 int.TryParse(txtNumEnd.Text, out int numEnd);
@@ -98,7 +100,13 @@ namespace crud_basico.View
 
                 using var httpClient = new HttpClient();
 
-                HttpResponseMessage response = await httpClient.PostAsJsonAsync("http://localhost:3000/clientes", cliente);
+                HttpResponseMessage response = new HttpResponseMessage();
+                if (cliente.id > 0)                
+                    response = await httpClient.PutAsJsonAsync("http://localhost:3000/clientes", cliente);
+                
+                else                
+                    response = await httpClient.PostAsJsonAsync("http://localhost:3000/clientes", cliente);            
+
 
                 if (response.IsSuccessStatusCode)
                 {

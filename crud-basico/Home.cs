@@ -20,6 +20,7 @@ namespace crud_basico
 
         private void btnCliente_Click(object sender, EventArgs e)
         {
+            string texto = txtTexto.Text;
             frmPesquisaCliente frmCli = new frmPesquisaCliente();
             frmCli.Show();
         }
@@ -39,6 +40,11 @@ namespace crud_basico
             //eu modifiquei isso aqui, prove me que não fui eu :) !!
 
             //eu modifiquei isso aqui, prove me que não fui eu :) !!
+        }
+
+        private void btnAcaoDoBotao_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
