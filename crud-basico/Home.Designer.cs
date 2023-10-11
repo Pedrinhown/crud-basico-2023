@@ -49,6 +49,7 @@
             Controls.Add(btnCliente);
             Name = "Home";
             Text = "Home";
+            Load += Home_Load;
             ResumeLayout(false);
         }
 

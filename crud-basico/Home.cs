@@ -29,5 +29,12 @@ namespace crud_basico
             frmPesquisaProduto frmProd = new frmPesquisaProduto();
             frmProd.Show();
         }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+            //eu modifiquei isso aqui, prove me que não fui eu :) !!
+            //eu modifiquei isso aqui, prove me que não fui eu :) !!
+            //eu modifiquei isso aqui, prove me que não fui eu :) !!
+        }
     }
 }
