@@ -102,7 +102,7 @@ namespace crud_basico.View
 
                 HttpResponseMessage response = new HttpResponseMessage();
                 if (cliente.id > 0)                
-                    response = await httpClient.PutAsJsonAsync("http://localhost:3000/clientes", cliente);
+                    response = await httpClient.PutAsJsonAsync($"http://localhost:3000/clientes/{cliente.id}", cliente);
                 
                 else                
                     response = await httpClient.PostAsJsonAsync("http://localhost:3000/clientes", cliente);            

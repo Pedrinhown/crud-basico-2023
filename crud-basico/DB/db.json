@@ -32,12 +32,12 @@
     },
     {
       "id": 4,
-      "nome": "Pedro",
+      "nome": "Pedro editado",
       "cpf": "00000000000",
       "dtNascimento": "2018-07-03T00:00:00",
       "altura": 1.82,
-      "endereco": "Rua Rio Guaíba, 416 416",
-      "numEnd": 416,
+      "endereco": "Rua Rio Guaíba, 416 416, 123 123",
+      "numEnd": 123,
       "idade": 5
     }
   ],
